@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvestorLibrary", "InvestorLibrary\InvestorLibrary.csproj", "{B975A258-C3B5-448B-9D3F-1F0F0BDAB6CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvestorUI", "InvestorUI\InvestorUI.csproj", "{C3D667A3-8552-4584-8C56-62426CB86FA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B975A258-C3B5-448B-9D3F-1F0F0BDAB6CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B975A258-C3B5-448B-9D3F-1F0F0BDAB6CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B975A258-C3B5-448B-9D3F-1F0F0BDAB6CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B975A258-C3B5-448B-9D3F-1F0F0BDAB6CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3D667A3-8552-4584-8C56-62426CB86FA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3D667A3-8552-4584-8C56-62426CB86FA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3D667A3-8552-4584-8C56-62426CB86FA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3D667A3-8552-4584-8C56-62426CB86FA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5BF790C6-21B6-4D7B-BF27-E583A02C68E7}
+	EndGlobalSection
+EndGlobal
