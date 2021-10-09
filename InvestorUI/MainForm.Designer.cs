@@ -52,10 +52,11 @@
             this.interestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transactionTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quickReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.stripDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.stripVersion = new System.Windows.Forms.ToolStripStatusLabel();
-            this.quickReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.investorsReportExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -231,7 +232,7 @@
             // interestToolStripMenuItem
             // 
             this.interestToolStripMenuItem.Name = "interestToolStripMenuItem";
-            this.interestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.interestToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.interestToolStripMenuItem.Text = "Interest";
             this.interestToolStripMenuItem.Click += new System.EventHandler(this.interestToolStripMenuItem_Click);
             // 
@@ -246,9 +247,18 @@
             // transactionTypesToolStripMenuItem
             // 
             this.transactionTypesToolStripMenuItem.Name = "transactionTypesToolStripMenuItem";
-            this.transactionTypesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.transactionTypesToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.transactionTypesToolStripMenuItem.Text = "Transaction Types";
             this.transactionTypesToolStripMenuItem.Click += new System.EventHandler(this.transactionTypesToolStripMenuItem_Click);
+            // 
+            // quickReportsToolStripMenuItem
+            // 
+            this.quickReportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.investorsReportExcelToolStripMenuItem});
+            this.quickReportsToolStripMenuItem.Name = "quickReportsToolStripMenuItem";
+            this.quickReportsToolStripMenuItem.Size = new System.Drawing.Size(102, 21);
+            this.quickReportsToolStripMenuItem.Text = "Quick Reports";
+            this.quickReportsToolStripMenuItem.Click += new System.EventHandler(this.quickReportsToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -274,12 +284,12 @@
             this.stripVersion.Size = new System.Drawing.Size(68, 17);
             this.stripVersion.Text = "stripVersion";
             // 
-            // quickReportsToolStripMenuItem
+            // investorsReportExcelToolStripMenuItem
             // 
-            this.quickReportsToolStripMenuItem.Name = "quickReportsToolStripMenuItem";
-            this.quickReportsToolStripMenuItem.Size = new System.Drawing.Size(102, 21);
-            this.quickReportsToolStripMenuItem.Text = "Quick Reports";
-            this.quickReportsToolStripMenuItem.Click += new System.EventHandler(this.quickReportsToolStripMenuItem_Click);
+            this.investorsReportExcelToolStripMenuItem.Name = "investorsReportExcelToolStripMenuItem";
+            this.investorsReportExcelToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.investorsReportExcelToolStripMenuItem.Text = "Investors Report - Excel";
+            this.investorsReportExcelToolStripMenuItem.Click += new System.EventHandler(this.investorsReportExcelToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -333,6 +343,7 @@
         private System.Windows.Forms.ToolStripMenuItem investmentListingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem investmentUpdatesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quickReportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem investorsReportExcelToolStripMenuItem;
     }
 }
 

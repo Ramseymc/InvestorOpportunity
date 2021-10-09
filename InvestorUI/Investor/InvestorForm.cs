@@ -56,9 +56,11 @@ namespace InvestorUI
 
             ButtonActions(FormAction.AddEdit);
         }
+        public async void GenerateInvestorReport(object sender, EventArgs e)
+        {
+        }
 
-
-        private async void SaveButton_Click(object sender, EventArgs e)
+            private async void SaveButton_Click(object sender, EventArgs e)
         {
             try
             {

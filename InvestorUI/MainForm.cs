@@ -157,10 +157,18 @@ namespace InvestorUI
 
         private void quickReportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new InvestmentUpdateReport();
+            // var form = new InvestmentUpdateReport();
             // create a quick report form to launch here 
 
-            form.Show();
+            // form.Show();
+            // form.MdiParent = this;
+        }
+
+        private void investorsReportExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new InvestorForm();
+
+            form.GenerateInvestorReport(sender, e);
             form.MdiParent = this;
         }
     }

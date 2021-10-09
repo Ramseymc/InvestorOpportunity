@@ -60,6 +60,7 @@ namespace InvestorLibrary
 
             if (isDebug)
             {
+                // place the connection details here to connection here to connect to my local server 
                 DBConnection = ConfigurationManager.ConnectionStrings["Development"].ConnectionString;
             }
             else

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace InvestorUI
 {
-    class InvestorController
+    public class InvestorController
     {
-        private readonly IInvestorRepository _investorRepository;
+        public readonly IInvestorRepository _investorRepository;
         private readonly IUserRepository _userRepository;
 
         InvestorForm _form;
