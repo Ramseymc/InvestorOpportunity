@@ -10,16 +10,21 @@ using System.ComponentModel;
 using System.Data;
 using System.Deployment.Application;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 namespace InvestorUI
 {
+    
     public partial class MainForm : Form
     {
+        private InvestorController _investorController;
         public MainForm()
         {
             InitializeComponent();
@@ -157,18 +162,26 @@ namespace InvestorUI
 
         private void quickReportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // var form = new InvestmentUpdateReport();
-            // create a quick report form to launch here 
-
-            // form.Show();
-            // form.MdiParent = this;
+            
         }
 
         private void investorsReportExcelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = new InvestorForm();
+            InvestorController _investorController = new InvestorController(form); ;
 
-            form.GenerateInvestorReport(sender, e);
+            // Folder Select Dialog for save directory 
+            label1.Visible = true;
+            DataTable dtInvestorResultSet = _investorController.GenerateInvestorReport(); // to be result from spGenerateInvestorReport  
+            
+            ClosedXML.Excel.XLWorkbook wbook = new ClosedXML.Excel.XLWorkbook();         
+            wbook.Worksheets.Add(dtInvestorResultSet, "InvestorReport");
+            wbook.SaveAs("C:\\Users\\Admin\\Documents\\capeDev\\SQL reports\\wbooks\\InvestorReport.xlsx");
+            
+            label1.Visible = false;
+            MessageBox.Show("Excel Workbook Successfully Created.", "Report Created");
+            // Open Workbook
+
             form.MdiParent = this;
         }
     }

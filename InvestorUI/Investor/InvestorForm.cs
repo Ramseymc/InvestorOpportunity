@@ -58,6 +58,7 @@ namespace InvestorUI
         }
         public async void GenerateInvestorReport(object sender, EventArgs e)
         {
+            _investorController.GenerateInvestorReport();
         }
 
             private async void SaveButton_Click(object sender, EventArgs e)

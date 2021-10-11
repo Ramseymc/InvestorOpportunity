@@ -4,6 +4,8 @@ using InvestorLibrary.Shared;
 using InvestorLibrary.User;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +35,31 @@ namespace InvestorUI
             _form.comboUser.SelectItemByValue(model.userId.ToString());
         }
 
+        public DataTable GenerateInvestorReport()
+        {
+            DataTable dt = new DataTable();
+            // either Development or Production
+            string connString = ContainerConfig.DBConnection; 
+            string query = "EXEC spGenerateInvestorReport";
+
+            // start loader
+            SqlConnection conn = new SqlConnection(connString);
+            SqlCommand cmd = new SqlCommand(query, conn);
+            conn.Open();
+
+            // create data adapter
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            // this will query the database and return the result to the datatable
+            da.Fill(dt);
+
+            // end loader
+
+            conn.Close();
+            da.Dispose();
+            return dt;
+        }
+
+      
 
         public async void LoadSearchList()
         {
