@@ -56,9 +56,36 @@ namespace InvestorUI
 
             ButtonActions(FormAction.AddEdit);
         }
-        public async void GenerateInvestorReport(object sender, EventArgs e)
-        {
-            _investorController.GenerateInvestorReport();
+        public void GenerateInvestorReport()
+        {       
+            // Folder Select Dialog for save directory 
+            FolderBrowserDialog folderDlg = new FolderBrowserDialog();
+            folderDlg.ShowNewFolderButton = true;
+            // Show the FolderBrowserDialog.  
+            DialogResult result = folderDlg.ShowDialog();
+            var selectedPath = "";
+            if (result == DialogResult.OK)
+            {
+                selectedPath = folderDlg.SelectedPath;
+                Environment.SpecialFolder root = folderDlg.RootFolder;
+            }
+            else { return; }
+            
+            // to be result from spGenerateInvestorReport  
+            DataTable dtInvestorResultSet = _investorController.GenerateInvestorReport();
+
+            ClosedXML.Excel.XLWorkbook wbook = new ClosedXML.Excel.XLWorkbook();
+            wbook.Worksheets.Add(dtInvestorResultSet, "InvestorReport");
+            wbook.SaveAs(selectedPath + "\\InvestorReport.xlsx");
+
+            
+            MessageBox.Show("Excel Workbook Successfully Created "
+                           + Environment.NewLine
+                           + selectedPath + "\\InvestorReport.xlsx",
+                           "Report Created");
+
+            // Open Workbook
+            System.Diagnostics.Process.Start(selectedPath + "\\InvestorReport.xlsx");
         }
 
             private async void SaveButton_Click(object sender, EventArgs e)

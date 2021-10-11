@@ -52,12 +52,11 @@
             this.interestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transactionTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quickReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.investorsReportExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.stripDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.stripVersion = new System.Windows.Forms.ToolStripStatusLabel();
             this.label1 = new System.Windows.Forms.Label();
+            this.investorsReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -73,8 +72,7 @@
             this.investmentToolStripMenuItem,
             this.investPledgeToolStripMenuItem,
             this.updatesToolStripMenuItem,
-            this.setupToolStripMenuItem,
-            this.quickReportsToolStripMenuItem});
+            this.setupToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
@@ -93,7 +91,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(121, 28);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -110,14 +108,14 @@
             // portalUserToolStripMenuItem
             // 
             this.portalUserToolStripMenuItem.Name = "portalUserToolStripMenuItem";
-            this.portalUserToolStripMenuItem.Size = new System.Drawing.Size(177, 28);
+            this.portalUserToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.portalUserToolStripMenuItem.Text = "Portal User";
             this.portalUserToolStripMenuItem.Click += new System.EventHandler(this.portalUserToolStripMenuItem_Click);
             // 
             // investorToolStripMenuItem1
             // 
             this.investorToolStripMenuItem1.Name = "investorToolStripMenuItem1";
-            this.investorToolStripMenuItem1.Size = new System.Drawing.Size(177, 28);
+            this.investorToolStripMenuItem1.Size = new System.Drawing.Size(224, 28);
             this.investorToolStripMenuItem1.Text = "Investor";
             this.investorToolStripMenuItem1.Click += new System.EventHandler(this.investorToolStripMenuItem1_Click);
             // 
@@ -125,23 +123,24 @@
             // 
             this.reportsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.investorListingToolStripMenuItem,
-            this.investorStatementToolStripMenuItem});
+            this.investorStatementToolStripMenuItem,
+            this.investorsReportToolStripMenuItem});
             this.reportsToolStripMenuItem1.Name = "reportsToolStripMenuItem1";
-            this.reportsToolStripMenuItem1.Size = new System.Drawing.Size(177, 28);
+            this.reportsToolStripMenuItem1.Size = new System.Drawing.Size(224, 28);
             this.reportsToolStripMenuItem1.Text = "Reports";
             this.reportsToolStripMenuItem1.Click += new System.EventHandler(this.reportsToolStripMenuItem1_Click);
             // 
             // investorListingToolStripMenuItem
             // 
             this.investorListingToolStripMenuItem.Name = "investorListingToolStripMenuItem";
-            this.investorListingToolStripMenuItem.Size = new System.Drawing.Size(238, 28);
+            this.investorListingToolStripMenuItem.Size = new System.Drawing.Size(273, 28);
             this.investorListingToolStripMenuItem.Text = "Investor Listing";
             this.investorListingToolStripMenuItem.Click += new System.EventHandler(this.investorListingToolStripMenuItem_Click);
             // 
             // investorStatementToolStripMenuItem
             // 
             this.investorStatementToolStripMenuItem.Name = "investorStatementToolStripMenuItem";
-            this.investorStatementToolStripMenuItem.Size = new System.Drawing.Size(238, 28);
+            this.investorStatementToolStripMenuItem.Size = new System.Drawing.Size(273, 28);
             this.investorStatementToolStripMenuItem.Text = "Investor Statement";
             this.investorStatementToolStripMenuItem.Click += new System.EventHandler(this.investorStatementToolStripMenuItem_Click);
             // 
@@ -253,22 +252,6 @@
             this.transactionTypesToolStripMenuItem.Text = "Transaction Types";
             this.transactionTypesToolStripMenuItem.Click += new System.EventHandler(this.transactionTypesToolStripMenuItem_Click);
             // 
-            // quickReportsToolStripMenuItem
-            // 
-            this.quickReportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.investorsReportExcelToolStripMenuItem});
-            this.quickReportsToolStripMenuItem.Name = "quickReportsToolStripMenuItem";
-            this.quickReportsToolStripMenuItem.Size = new System.Drawing.Size(130, 27);
-            this.quickReportsToolStripMenuItem.Text = "Quick Reports";
-            this.quickReportsToolStripMenuItem.Click += new System.EventHandler(this.quickReportsToolStripMenuItem_Click);
-            // 
-            // investorsReportExcelToolStripMenuItem
-            // 
-            this.investorsReportExcelToolStripMenuItem.Name = "investorsReportExcelToolStripMenuItem";
-            this.investorsReportExcelToolStripMenuItem.Size = new System.Drawing.Size(273, 28);
-            this.investorsReportExcelToolStripMenuItem.Text = "Investors Report - Excel";
-            this.investorsReportExcelToolStripMenuItem.Click += new System.EventHandler(this.investorsReportExcelToolStripMenuItem_Click);
-            // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -297,12 +280,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(515, 314);
+            this.label1.Location = new System.Drawing.Point(508, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(248, 23);
             this.label1.TabIndex = 3;
             this.label1.Text = "Generating Report, please wait.";
             this.label1.Visible = false;
+            // 
+            // investorsReportToolStripMenuItem
+            // 
+            this.investorsReportToolStripMenuItem.Name = "investorsReportToolStripMenuItem";
+            this.investorsReportToolStripMenuItem.Size = new System.Drawing.Size(273, 28);
+            this.investorsReportToolStripMenuItem.Text = "Investors Report - Excel";
+            this.investorsReportToolStripMenuItem.Click += new System.EventHandler(this.investorsReportToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -356,9 +346,8 @@
         private System.Windows.Forms.ToolStripMenuItem investorStatementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem investmentListingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem investmentUpdatesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quickReportsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem investorsReportExcelToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem investorsReportToolStripMenuItem;
     }
 }
 

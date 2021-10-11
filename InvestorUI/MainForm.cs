@@ -160,28 +160,12 @@ namespace InvestorUI
             form.MdiParent = this;
         }
 
-        private void quickReportsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void investorsReportExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        private void investorsReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = new InvestorForm();
-            InvestorController _investorController = new InvestorController(form); ;
-
-            // Folder Select Dialog for save directory 
             label1.Visible = true;
-            DataTable dtInvestorResultSet = _investorController.GenerateInvestorReport(); // to be result from spGenerateInvestorReport  
-            
-            ClosedXML.Excel.XLWorkbook wbook = new ClosedXML.Excel.XLWorkbook();         
-            wbook.Worksheets.Add(dtInvestorResultSet, "InvestorReport");
-            wbook.SaveAs("C:\\Users\\Admin\\Documents\\capeDev\\SQL reports\\wbooks\\InvestorReport.xlsx");
-            
+            form.GenerateInvestorReport();
             label1.Visible = false;
-            MessageBox.Show("Excel Workbook Successfully Created.", "Report Created");
-            // Open Workbook
-
             form.MdiParent = this;
         }
     }
