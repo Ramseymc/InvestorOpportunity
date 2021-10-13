@@ -23,8 +23,7 @@ namespace InvestorUI
 {
     
     public partial class MainForm : Form
-    {
-        private InvestorController _investorController;
+    {        
         public MainForm()
         {
             InitializeComponent();

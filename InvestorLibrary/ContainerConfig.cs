@@ -65,7 +65,8 @@ namespace InvestorLibrary
             }
             else
             {
-                DBConnection = ConfigurationManager.ConnectionStrings["Production"].ConnectionString;
+                DBConnection = ConfigurationManager.ConnectionStrings["Development"].ConnectionString;
+                //DBConnection = ConfigurationManager.ConnectionStrings["Production"].ConnectionString;
             }
             
         }
