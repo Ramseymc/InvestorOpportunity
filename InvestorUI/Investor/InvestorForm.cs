@@ -63,33 +63,33 @@ namespace InvestorUI
             folderDlg.ShowNewFolderButton = true;
             // Show the FolderBrowserDialog.  
             DialogResult result = folderDlg.ShowDialog();
-            var selectedPath = "";
+            var savePath = "";
             if (result == DialogResult.OK)
             {
-                selectedPath = folderDlg.SelectedPath;
+                savePath = folderDlg.SelectedPath;
                 Environment.SpecialFolder root = folderDlg.RootFolder;
             }
             else { return; }
-            
+
             // to be result from spGenerateInvestorReport  
             DataTable dtInvestorResultSet = _investorController.GenerateInvestorReport();
-
+            var dateTime = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            dateTime = "_" + dateTime.Replace(":", ";");
+            dateTime = dateTime.Replace("/", "-");
             ClosedXML.Excel.XLWorkbook wbook = new ClosedXML.Excel.XLWorkbook();
             wbook.Worksheets.Add(dtInvestorResultSet, "InvestorReport");
-            wbook.SaveAs(selectedPath + "\\InvestorReport.xlsx");
-
+            savePath = savePath + "\\InvestorReport " + dateTime + ".xlsx";
+            wbook.SaveAs(savePath);
             
             MessageBox.Show("Excel Workbook Successfully Created "
                            + Environment.NewLine
-                           + selectedPath + "\\InvestorReport.xlsx",
+                           + savePath,
                            "Report Created");
 
             // Open Workbook
-            System.Diagnostics.Process.Start(selectedPath + "\\InvestorReport.xlsx");
+            System.Diagnostics.Process.Start(savePath);
         }
-
-            private async void SaveButton_Click(object sender, EventArgs e)
-        {
+            private async void SaveButton_Click(object sender, EventArgs e) {
             try
             {
                 if (_investorController.IsValidFields().success)
